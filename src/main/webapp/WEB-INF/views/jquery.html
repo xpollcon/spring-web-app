@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#txt:visible").animate({
+                left: "+=200px"
+            },"fast");
+            $("#btn1").bind("click",function(){
+                $(".tbl1 tr:odd").css("background-color", "#bbbbff");
+            });
+            $("#btn2").bind("click",function(){
+                $("li").each(function(){
+                    console.log($(this).text());
+                });
+            });
+            $("#btn3").bind("click",function(){
+            $("#tbl2 tr:even td:odd").each(function(){
+                console.log($(this).text());
+            });
+            });
+        });
+    </script>
+    <title>jQuery Test</title>
+</head>
+<body>
+    <table class="tbl1" border="1px">
+        <tr>
+            <td>1</td>
+            <td>Tea</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Milk</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Coffee</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Soft Drink</td>
+        </tr>
+
+    </table>
+    <br/>
+    <br/>
+    <table id="tbl2" border="1px">
+        <tr>
+            <td>1</td>
+            <td>item1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>item2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>item3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>item4</td>
+        </tr>
+
+    </table>
+    <br/>
+    <br/>
+    <ul>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+
+    <div><p id="txt">Moving Text</p></div>
+
+<input type="button" id="btn1" value="Change Table">
+<input type="button" id="btn2" value="Change List">
+<input type="button" id="btn3" value="Change List">
+<input type="button" id="btn4" value="Move Text">
+
+</body>
+
+</html>

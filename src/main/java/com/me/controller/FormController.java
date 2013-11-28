@@ -26,6 +26,11 @@ public class FormController {
         this.service = service;
     }
 
+    @RequestMapping(value = "/SimpleForm",method = RequestMethod.GET)
+    public String processSimpleForm(){
+        return "SimpleForm";
+    }
+
     @RequestMapping(value = "/form",method = RequestMethod.GET)
     public String index(Model model){
         model.addAttribute("person",new Person());
@@ -33,7 +38,9 @@ public class FormController {
     }
 
     @RequestMapping(value = "/form",method = RequestMethod.POST)
-    public void processForm(@ModelAttribute Person person){
-        service.printPerson(person);
+    public String processForm(@ModelAttribute Person person,Model model){
+        service.savePerson(person);
+        model.addAttribute("persons",service.getPersons());
+        return "form";
     }
 }

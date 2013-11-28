@@ -15,5 +15,9 @@
         </form:select><br/>
         <input type="submit" value="Submit"/>
         </form:form>
+
+        <c:forEach items="${persons}" var="person">
+            <p>${person.fullName}</p>
+        </c:forEach>
     </body>
 </html>

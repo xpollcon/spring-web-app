@@ -3,6 +3,9 @@ package com.me.services;
 import com.me.domain.Person;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: bmaghbool
@@ -13,7 +16,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonService {
-    public void printPerson(Person person) {
-        System.out.println(person);
+
+    List<Person> persons = new ArrayList<Person>();
+
+    public void savePerson(Person person) {
+        persons.add(person);
+    }
+
+    public List getPersons(){
+        return persons;
     }
 }

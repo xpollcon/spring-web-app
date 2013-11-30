@@ -4,6 +4,7 @@
     <head>
         <script type="text/javascript" src="static/scripts/jquery-2.0.3.js"></script>
         <script type="text/javascript" src="static/scripts/simple-form.js"></script>
+        <link rel="stylesheet" type="text/css" href="static/style/style.css">
     </head>
     <body>
         <form>
@@ -17,5 +18,9 @@
             <div>
             <button id="send" type="button">Send</button>
         </form>
+
+        <p>Phone Book</p>
+        <div id="phone-book">
+        </dev>
     </body>
 </html>

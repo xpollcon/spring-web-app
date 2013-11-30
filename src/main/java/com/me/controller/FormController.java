@@ -5,9 +5,10 @@ import com.me.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import javax.xml.ws.RespectBinding;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,4 +44,25 @@ public class FormController {
         model.addAttribute("persons",service.getPersons());
         return "form";
     }
+
+    @RequestMapping(value="/addPerson",method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<Person> addPerson(
+            @RequestParam("fullName") String fullName,
+            @RequestParam("phoneNo") String phoneNo,
+            @RequestParam("gender") String gender){
+        service.savePerson(new Person(fullName, phoneNo, Person.Gender.valueOf(gender)));
+        return service.getPersons();
+    }
+
+    @RequestMapping(value = "/getPersons",method = RequestMethod.POST)
+    public
+    @ResponseBody
+    List<Person> getPersons(){
+        return service.getPersons();
+    }
+
+
+
 }

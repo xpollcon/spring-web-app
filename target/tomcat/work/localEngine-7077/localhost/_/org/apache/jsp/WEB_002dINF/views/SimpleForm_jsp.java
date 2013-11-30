@@ -56,6 +56,7 @@ public final class SimpleForm_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <script type=\"text/javascript\" src=\"static/scripts/jquery-2.0.3.js\"></script>\n");
       out.write("        <script type=\"text/javascript\" src=\"static/scripts/simple-form.js\"></script>\n");
+      out.write("        <link rel=\"stylesheet\" type=\"text/css\" href=\"static/style/style.css\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <form>\n");
@@ -69,6 +70,10 @@ public final class SimpleForm_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div>\n");
       out.write("            <button id=\"send\" type=\"button\">Send</button>\n");
       out.write("        </form>\n");
+      out.write("\n");
+      out.write("        <p>Phone Book</p>\n");
+      out.write("        <div id=\"phone-book\">\n");
+      out.write("        </dev>\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {

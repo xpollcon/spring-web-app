@@ -14,6 +14,15 @@ public class Person {
     private String phoneNo;
     private Gender gender;
 
+    public Person(String fullName, String phoneNo, Gender gender) {
+        this.fullName = fullName;
+        this.phoneNo = phoneNo;
+        this.gender = gender;
+    }
+
+    public Person() {
+    }
+
     public enum Gender{
         MALE,
         FEMALE
